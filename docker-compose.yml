@@ -1,0 +1,52 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: dockerfiles/Jupyter.Dockerfile
+    tty: true
+    container_name: jupyter
+    ports:
+      - 8888:8888
+      - 2024:2024
+      - 8000:8000
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./config:/home/jovyan/.config
+      - ./cache:/home/jovyan/.cursor-server
+    command: start-notebook.py --NotebookApp.token='1234'
+    networks:
+      - mcp-network
+  mcp-dev:
+    build:
+      context: .
+      dockerfile: dockerfiles/MCP.Dockerfile
+    image: mcp/multi-lang
+    container_name: mcp
+    ports:
+      - 8001:8000
+      - 6274:6274
+      - 5173:5173
+      - 6277:6277
+      - 3000:3000
+    volumes:
+      - ./work:/workspace
+      - ./config:/root/.config
+      - ./cache:/root/.cursor-server
+    environment:
+      - PYTHONPATH=/workspace
+      - DEBUG=true
+    tty: true
+    stdin_open: true
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+volumes:
+  jupyter-data:
+    name: jupyter-data
+  dev-cache:
+    driver: local
+
+networks:
+  mcp-network:
+    driver: bridge
