@@ -44,8 +44,6 @@ services:
 volumes:
   jupyter-data:
     name: jupyter-data
-  dev-cache:
-    driver: local
 
 networks:
   mcp-network:

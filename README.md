@@ -51,11 +51,11 @@ The Jupyter Notebook interface is accessible directly from your web browser.
 - URL: `http://localhost:8888`
 - Default Token: `1234`
 
-The work/ directory from your host machine is automatically mounted inside the Jupyter container. This allows you to seamlessly access and work with your project files. You can modify the default token and other configuration settings within the docker-compose.yml file.
+The work/ directory from your host machine is automatically mounted inside the Jupyter container. This allows you to seamlessly access and work with your project files. You can modify the default token and other configuration settings within the `docker-compose.yml` file.
 
 ### Using MCP Inspector 🕵️‍♀️
 
-The Model Context Protocol (MCP) Inspector is a tool designed to monitor and visualize the interactions and data flow within MCP server. It helps in debugging and understanding how agents process and share information. A sample application demonstrating the MCP Inspector is located in the work/mcp directory.
+The Model Context Protocol (MCP) Inspector is a tool designed to monitor and visualize the interactions and data flow within MCP server. It helps in debugging and understanding how agents process and share information. A sample application demonstrating the MCP Inspector is located in the `work/mcp` directory.
 
 Steps to Access:
 1. Enter the MCP environment:
@@ -132,7 +132,7 @@ cd work/langgraph/studio
 cp .env.example .env
 ```
 
-Adjust the environment variables within the .env file to suit your specific requirements.
+Adjust the environment variables within the `.env` file to suit your specific requirements.
 
 4. Run LangGraph Studio:
 
@@ -142,9 +142,7 @@ langgraph dev --host=0.0.0.0
 
 5. Access LangGraph Studio:
 
-```
-Open your web browser and navigate to https://smith.langchain.com/studio/?baseUrl=http://0.0.0.0:2024.
-```
+Open your web browser and navigate to `https://smith.langchain.com/studio/?baseUrl=http://0.0.0.0:2024`. You need to allow `Insecure content` from site setting to make it works properly. To work around this, run the above command with `--tunnel` to access Studio via a secure tunnel.
 
 ### Accessing Containers via VS Code Dev Containers 🚀
 
