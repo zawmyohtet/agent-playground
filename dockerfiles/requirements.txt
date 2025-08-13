@@ -8,6 +8,10 @@ langsmith
 langchain-community
 langchain-core
 langchain-openai
+langchain-google-vertexai
+langchain-google-genai
+langchain-anthropic
+langchain-aws
 notebook
 tavily-python
 wikipedia
@@ -24,3 +28,5 @@ fastcluster
 seaborn
 uv
 google-adk
+fastapi
+uvicorn
