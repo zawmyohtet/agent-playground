@@ -1,9 +1,15 @@
 # =================================
 # Python MCP Server Image
 # =================================
-FROM python:3.13
+FROM python:3.12
 
-RUN apt-get install curl
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        libpq-dev \
+        curl \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /workspace

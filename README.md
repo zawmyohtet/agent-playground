@@ -1,6 +1,6 @@
 ### Agentic Application Development Environments 🚀
 
-This repository provides a containerized development environment designed for building and experimenting with agentic applications. It includes two primary environments: one tailored for general agentic application development and another specifically for Model Context Protocol (MCP) server development. Both environments come pre-configured with essential packages to minimize setup time and help you get started quickly.
+This repository provides a containerized development environment designed for building and experimenting with agentic applications. It includes three primary environments: one tailored for general agentic application development, one for jupyter notebook and another specifically for Model Context Protocol (MCP) server development. Environments come pre-configured with essential packages to minimize setup time and help you get started quickly.
 
 ### Getting Started
 
@@ -39,6 +39,11 @@ For Jupyter:
 docker compose exec jupyter bash
 ```
 
+For Agent:
+```
+docker compose exec agent bash
+```
+
 For MCP Server:
 ```
 docker compose exec mcp-dev bash
@@ -51,7 +56,7 @@ The Jupyter Notebook interface is accessible directly from your web browser.
 - URL: `http://localhost:8888`
 - Default Token: `1234`
 
-The work/ directory from your host machine is automatically mounted inside the Jupyter container. This allows you to seamlessly access and work with your project files. You can modify the default token and other configuration settings within the `docker-compose.yml` file.
+The workspace/ directory from your host machine is automatically mounted inside the Jupyter container. This allows you to seamlessly access and work with your project files. You can modify the default token and other configuration settings within the `docker-compose.yml` file.
 
 ### Using MCP Inspector 🕵️‍♀️
 
@@ -89,16 +94,16 @@ The environment exposes several ports by default, which can be adjusted in the d
 Google ADK Web refers to the web interface for the Agent Development Kit (ADK). It provides a platform for building, testing, and deploying agentic applications developed with Google's tools and frameworks, offering a visual way to interact with and manage your agents. A sample application built with the Agent Development Kit (ADK) Web is provided in the `work/adk/sample` directory.
 
 #### Steps to Access:
-1. Enter the Jupyter environment:
+1. Enter the agent environment:
 
 ```
-docker compose exec jupyter bash
+docker compose exec agent bash
 ```
 
 2. Set up the environment variables:
 
 ```
-cd work/adk/sample
+cd workspace/adk/sample
 cp .env.example .env
 ```
 
@@ -119,16 +124,16 @@ The ADK web application will be available at `http://0.0.0.0:8000.`
 LangGraph Studio is a development environment for visualizing, debugging, and iterating on LangGraph applications. It allows developers to graphically inspect the state and flow of their LLM-powered applications, making it easier to build complex, multi-step agentic workflows. A sample application for LangGraph Studio is included in the work/langgraph directory.
 
 #### Steps to Access:
-1. Enter the Jupyter environment:
+1. Enter the agent environment:
 
 ```
-docker compose exec jupyter bash
+docker compose exec agent bash
 ```
 
 2. Set up the environment variables:
 
 ```
-cd work/langgraph/studio
+cd workspace/langgraph/studio
 cp .env.example .env
 ```
 
