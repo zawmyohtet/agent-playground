@@ -149,6 +149,10 @@ langgraph dev --host=0.0.0.0
 
 Open your web browser and navigate to `https://smith.langchain.com/studio/?baseUrl=http://0.0.0.0:2024`. You need to allow `Insecure content` from site setting to make it works properly. To work around this, run the above command with `--tunnel` to access Studio via a secure tunnel.
 
+### Staying up to date
+
+I recommend using the `workspace/personal` folder for your own projects. This directory is excluded from Git tracking, ensuring your personal work remains separate while you stay current with `agent-playground` updates.
+
 ### Accessing Containers via VS Code Dev Containers 🚀
 
 For an integrated development experience, you can use the VS Code Dev Containers extension to work directly within the Docker containers.
