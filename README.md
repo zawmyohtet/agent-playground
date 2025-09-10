@@ -88,6 +88,7 @@ The environment exposes several ports by default, which can be adjusted in the d
 - 5173
 - 6277
 - 3000
+- 2024
 
 ### Using ADK Web 🌐
 
